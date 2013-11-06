@@ -11,5 +11,12 @@
 
 	<artifactId>example-guiced</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>me.baran</groupId>
+			<artifactId>example-ioc</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>
