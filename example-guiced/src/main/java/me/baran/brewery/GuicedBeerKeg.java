@@ -11,7 +11,6 @@ import me.baran.brewery.blueprint.Beer;
  */
 public class GuicedBeerKeg extends SimpleBeerKeg {
 
-  @Inject
   private Provider<Beer> beerProvider;
 
   @Inject

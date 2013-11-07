@@ -1,4 +1,4 @@
-package me.baran.guice.annotation;
+package me.baran.brewery.annotation;
 
 import com.google.inject.BindingAnnotation;
 import java.lang.annotation.Target;

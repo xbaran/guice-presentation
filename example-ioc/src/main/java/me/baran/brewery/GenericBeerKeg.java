@@ -7,22 +7,15 @@ import me.baran.brewery.blueprint.Beer;
  */
 public class GenericBeerKeg extends SimpleBeerKeg {
 
-  private Class<? extends Beer> beerClass;
+  private BeerFactory beerFactory;
 
-  public GenericBeerKeg(float capacity, Class<? extends Beer> beerClass) {
+  public GenericBeerKeg(float capacity, BeerFactory beerFactory) {
     super(capacity);
-    this.beerClass = beerClass;
+    this.beerFactory = beerFactory;
   }
 
   protected Beer createBeer() {
-    try {
-      return beerClass.newInstance();
-    } catch (InstantiationException e) {
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    }
-    return null;
+    return beerFactory.get();
   };
 
 }

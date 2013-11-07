@@ -1,5 +1,6 @@
 package me.baran.brewery.java;
 
+import me.baran.brewery.BeerFactory;
 import me.baran.brewery.blueprint.BeerKeg;
 import me.baran.brewery.blueprint.BeerKegFactory;
 import me.baran.brewery.GenericBeerKeg;
@@ -12,6 +13,6 @@ public class JavaBeerKegFactory implements BeerKegFactory {
   @Override
   public BeerKeg orderBeerKeg() {
     //return new JavaBeerKeg(50);
-    return new GenericBeerKeg(50,JavaBeer.class);
+    return new GenericBeerKeg(50,new BeerFactory(JavaBeer.class));
   }
 }

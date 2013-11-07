@@ -14,4 +14,9 @@ public class GuicedBrewery extends SimpleBrewery {
   public GuicedBrewery(BeerFaucet beerFaucet, BeerKegFactory beerKegFactory) {
     super(beerFaucet, beerKegFactory);
   }
+
+/*  @Inject
+  public void setBeerFaucet(BeerFaucet beerFaucet) {
+    this.beerFaucet = beerFaucet;
+  }*/
 }

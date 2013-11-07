@@ -1,9 +1,7 @@
-package me.baran.guice.annotation;
+package me.baran.brewery.annotation;
 
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
-
-import me.baran.guice.annotation.BreweryPub;
 
 public class BreweryPubImpl implements BreweryPub, Serializable {
 

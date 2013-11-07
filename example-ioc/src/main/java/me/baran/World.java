@@ -1,10 +1,11 @@
 package me.baran;
 
+import me.baran.brewery.SimpleBeerFaucet;
+import me.baran.brewery.SimpleBeerKegFactory;
+import me.baran.brewery.SimpleBrewery;
 import me.baran.brewery.blueprint.BeerKegFactory;
 import me.baran.brewery.blueprint.Brewery;
-import me.baran.brewery.SimpleBeerFaucet;
-import me.baran.brewery.SimpleBrewery;
-import me.baran.brewery.java.JavaBeerKegFactory;
+import me.baran.brewery.java.JavaBeer;
 import me.baran.brewery.zamocky.ZamockyBeerKegFactory;
 import me.baran.brewery.zamocky.ZamockyPivovar;
 import me.baran.people.CommonCustomer;
@@ -21,7 +22,7 @@ public class World {
   public World() {
     Brewery zamockyBrewery = new ZamockyPivovar(new ZamockyBeerKegFactory());
 
-    BeerKegFactory javaBeerKegFactory = new JavaBeerKegFactory();
+    BeerKegFactory javaBeerKegFactory = new SimpleBeerKegFactory(50, JavaBeer.class);
     Brewery javaPivarna = new SimpleBrewery(new SimpleBeerFaucet(javaBeerKegFactory.orderBeerKeg()),javaBeerKegFactory);
 
 
