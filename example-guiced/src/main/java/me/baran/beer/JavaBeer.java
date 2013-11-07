@@ -3,9 +3,9 @@ package me.baran.beer;
 import me.baran.brewery.blueprint.Beer;
 
 /**
- * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 2:37 PM
+ * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 11:54 PM
  */
-public class KozelBeer implements Beer {
+public class JavaBeer implements Beer {
 
   @Override
   public Boolean isStrong() {
@@ -14,6 +14,6 @@ public class KozelBeer implements Beer {
 
   @Override
   public String getBrand() {
-    return "Kozel";
+    return "Java";
   }
 }

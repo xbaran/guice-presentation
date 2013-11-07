@@ -1,15 +1,16 @@
 package me.baran.guice;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Provider;
 import com.google.inject.Provides;
 import com.google.inject.name.Names;
 
 import java.lang.annotation.Annotation;
 
-import me.baran.brewery.BeerFaucet;
-import me.baran.brewery.BeerKeg;
-import me.baran.brewery.BeerKegFactory;
-import me.baran.brewery.Brewery;
+import me.baran.brewery.blueprint.BeerFaucet;
+import me.baran.brewery.blueprint.BeerKeg;
+import me.baran.brewery.blueprint.BeerKegFactory;
+import me.baran.brewery.blueprint.Brewery;
 import me.baran.brewery.GuicedBeerFaucet;
 import me.baran.brewery.GuicedBeerKeg;
 import me.baran.brewery.GuicedBrewery;
@@ -17,11 +18,11 @@ import me.baran.brewery.GuicedBrewery;
 /**
  * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 2:37 PM
  */
-class BreweryModule extends AbstractModule {
+class BreweryMechanismModul extends AbstractModule {
 
   private final Annotation pubAnnotation;
 
-  BreweryModule(Annotation pubAnnotation) {
+  BreweryMechanismModul(Annotation pubAnnotation) {
     this.pubAnnotation = pubAnnotation;
   }
 
@@ -35,12 +36,12 @@ class BreweryModule extends AbstractModule {
   }
 
   @Provides
-  public BeerKegFactory providesBeerKegFactory(final BeerKeg beerKeg) {
+  public BeerKegFactory providesBeerKegFactory(final Provider<BeerKeg> beerKegProvider) {
 
     return new BeerKegFactory() {
       @Override
-      public BeerKeg brewBeerKeg() {
-        return beerKeg;
+      public BeerKeg orderBeerKeg() {
+        return beerKegProvider.get();
       }
     };
   }

@@ -1,27 +1,34 @@
 package me.baran.people;
 
-import me.baran.brewery.Beer;
-import me.baran.brewery.Brewery;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import me.baran.brewery.blueprint.Beer;
+import me.baran.brewery.blueprint.Brewery;
+import me.baran.people.decision.DrinkingStrategy;
+import me.baran.people.decision.GoHomeStrategy;
+import me.baran.people.decision.OptimisticDrinkingStrategy;
+import me.baran.people.decision.TimeToGoHomeStrategy;
 
 /**
  * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 11:11 AM
  */
-public class SimplePerson implements LivingBean {
+public class CommonCustomer implements Customer {
 
   private String name;
   private DrinkingStrategy drinkingStrategy;
   private GoHomeStrategy goHomeStrategy;
-  private int mood = 0;
+  private final AtomicInteger mood = new AtomicInteger(0);
 
-  public SimplePerson(String name) {
-    this(name, new MoodAwareGoHomeStrategy());
+  public CommonCustomer(String name) {
+    this(name, new TimeToGoHomeStrategy());
   }
 
-  public SimplePerson(String name, GoHomeStrategy goHomeStrategy) {
+  public CommonCustomer(String name, GoHomeStrategy goHomeStrategy) {
     this(name,new OptimisticDrinkingStrategy(), goHomeStrategy);
   }
 
-  public SimplePerson(String name, DrinkingStrategy drinkingStrategy, GoHomeStrategy goHomeStrategy) {
+  public CommonCustomer(String name, DrinkingStrategy drinkingStrategy,
+                        GoHomeStrategy goHomeStrategy) {
     this.name = name;
     this.drinkingStrategy = drinkingStrategy;
     this.goHomeStrategy = goHomeStrategy;
@@ -43,7 +50,7 @@ public class SimplePerson implements LivingBean {
   }
 
   private void goBackHome() {
-    mood--;
+    mood.incrementAndGet();
   }
 
 }

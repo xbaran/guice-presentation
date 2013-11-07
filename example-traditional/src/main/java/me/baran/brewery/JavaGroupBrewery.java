@@ -9,16 +9,16 @@ public class JavaGroupBrewery {
   private Boolean openStatus = Boolean.FALSE;
 
   public JavaGroupBrewery() {
-    buildCoffeeShop();
+    buildBrewery();
     this.javaBeerFaucet = new JavaBeerFaucet();
   }
 
-  public void openShop() {
+  public void openBrewery() {
     cleanUp(javaBeerFaucet);
     this.openStatus = Boolean.TRUE;
   }
 
-  public void closeShop() {
+  public void closeBrewery() {
     cleanUp(javaBeerFaucet);
     this.openStatus = Boolean.FALSE;
   }
@@ -49,7 +49,7 @@ public class JavaGroupBrewery {
 
   }
 
-  private void buildCoffeeShop() {
+  private void buildBrewery() {
   }
 
 }

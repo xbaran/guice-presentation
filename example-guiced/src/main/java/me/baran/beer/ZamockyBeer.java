@@ -1,4 +1,4 @@
-package me.baran.brewery.zamocky;
+package me.baran.beer;
 
 import me.baran.brewery.blueprint.Beer;
 

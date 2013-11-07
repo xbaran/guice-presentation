@@ -1,9 +1,11 @@
-package me.baran.guice;
+package me.baran.guice.annotation;
 
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
 
-class BreweryPubImpl implements BreweryPub, Serializable {
+import me.baran.guice.annotation.BreweryPub;
+
+public class BreweryPubImpl implements BreweryPub, Serializable {
 
   private final String value;
 

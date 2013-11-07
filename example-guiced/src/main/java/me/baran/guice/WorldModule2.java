@@ -12,7 +12,12 @@ public class WorldModule2 extends AbstractModule {
 
   @Override
   protected void configure() {
-    install(new SimpleBreweryModule("PilsnerPub", PilsnerBeer.class));
-    install(new SimpleBreweryModule("KozelPub", KozelBeer.class));
+    install(new NewBreweryModule("PilsnerPub", PilsnerBeer.class));
+    install(new NewBreweryModule("KozelPub", KozelBeer.class));
+    install(new NewBreweryModule("KozelPub", KozelBeer.class));
+    install(new NewBreweryModule("KozelPub", KozelBeer.class));
+    install(new NewBreweryModule("KozelPub", KozelBeer.class));
+    install(new NewBreweryModule("KozelPub", KozelBeer.class));
+    install(new NewBreweryModule("KozelPub", KozelBeer.class));
   }
 }

@@ -1,5 +1,9 @@
 package me.baran.brewery;
 
+import me.baran.brewery.blueprint.Beer;
+import me.baran.brewery.blueprint.BeerFaucet;
+import me.baran.brewery.blueprint.BeerKeg;
+
 /**
  * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 10:49 AM
  */

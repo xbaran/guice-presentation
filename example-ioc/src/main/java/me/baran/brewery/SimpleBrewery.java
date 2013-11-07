@@ -1,9 +1,15 @@
 package me.baran.brewery;
 
+import me.baran.brewery.blueprint.Beer;
+import me.baran.brewery.blueprint.BeerFaucet;
+import me.baran.brewery.blueprint.BeerKeg;
+import me.baran.brewery.blueprint.BeerKegFactory;
+import me.baran.brewery.blueprint.Brewery;
+
 /**
  * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 10:18 AM
  */
-public abstract class SimpleBrewery implements Brewery {
+public class SimpleBrewery implements Brewery {
 
   protected BeerFaucet beerFaucet;
   protected BeerKegFactory beerKegFactory;
@@ -15,12 +21,12 @@ public abstract class SimpleBrewery implements Brewery {
     this.beerKegFactory = beerKegFactory;
   }
 
-  public void openShop() {
+  public void openBrewery() {
     cleanUp(beerFaucet);
     this.openStatus = Boolean.TRUE;
   }
 
-  public void closeShop() {
+  public void closeBrewery() {
     cleanUp(beerFaucet);
     this.openStatus = Boolean.FALSE;
   }
@@ -48,7 +54,7 @@ public abstract class SimpleBrewery implements Brewery {
   }
 
   private void replaceEmptyKeg() {
-    beerFaucet.replaceEmptyKeg(beerKegFactory.brewBeerKeg());
+    beerFaucet.replaceEmptyKeg(beerKegFactory.orderBeerKeg());
   }
 
   private void cleanUp(BeerFaucet beerFaucet) {

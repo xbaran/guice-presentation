@@ -1,6 +1,6 @@
 package me.baran.brewery.zamocky;
 
-import me.baran.brewery.BeerKegFactory;
+import me.baran.brewery.blueprint.BeerKegFactory;
 import me.baran.brewery.SimpleBeerFaucet;
 import me.baran.brewery.SimpleBrewery;
 
@@ -10,7 +10,7 @@ import me.baran.brewery.SimpleBrewery;
 public class ZamockyPivovar extends SimpleBrewery {
 
   public ZamockyPivovar(BeerKegFactory factory) {
-    super(new SimpleBeerFaucet(factory.brewBeerKeg()),factory);
+    super(new SimpleBeerFaucet(factory.orderBeerKeg()),factory);
   }
 
 }

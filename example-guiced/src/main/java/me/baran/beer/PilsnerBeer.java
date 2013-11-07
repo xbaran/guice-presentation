@@ -1,6 +1,6 @@
 package me.baran.beer;
 
-import me.baran.brewery.Beer;
+import me.baran.brewery.blueprint.Beer;
 
 /**
  * Author: Milan Baran (milan.baran@gmail.com) Date: 11/6/13 Time: 2:28 PM
